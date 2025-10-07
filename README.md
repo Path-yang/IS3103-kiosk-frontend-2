@@ -236,15 +236,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+**Path-yang**
+- GitHub: [@Path-yang](https://github.com/Path-yang)
 
 ## 🙏 Acknowledgments
 
 - Images sourced from [Unsplash](https://unsplash.com)
 - Design inspired by modern kiosk UX best practices
 - Built with ❤️ for Zhangliang Malatang
+- Special thanks to the React and Tailwind CSS communities
 
 ---
 
