@@ -16,26 +16,26 @@ export const PortionSelection: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Button
             onClick={() => setCurrentScreen('welcome')}
             variant="outline"
             size="md"
-            className="mb-6"
+            className="mb-4 sm:mb-6"
           >
             ← {translations.back[language]}
           </Button>
           <ProgressBar currentStep={1} totalSteps={6} />
-          <h1 className="text-5xl font-bold text-gray-900 text-center mb-4">
+          <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.selectPortion[language]}
           </h1>
         </div>
 
         {/* Portion Size Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {portionSizes.map((portion) => (
             <PortionSizeCard
               key={portion.id}
@@ -53,7 +53,7 @@ export const PortionSelection: React.FC = () => {
             disabled={!order.portionSize}
             variant="primary"
             size="xl"
-            className="min-w-[400px]"
+            className="w-full sm:min-w-[400px]"
           >
             {translations.continue[language]}
           </Button>
@@ -61,10 +61,10 @@ export const PortionSelection: React.FC = () => {
 
         {/* Cart Preview */}
         {order.portionSize && (
-          <div className="mt-8 text-center bg-white rounded-2xl p-6 shadow-lg">
-            <p className="text-xl text-gray-600">
+          <div className="mt-6 sm:mt-8 text-center bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+            <p className="text-lg sm:text-xl text-gray-600">
               {translations.total[language]}:{' '}
-              <span className="text-3xl font-bold text-primary ml-2">
+              <span className="text-2xl sm:text-3xl font-bold text-primary ml-2">
                 $
                 {portionSizes.find((p) => p.id === order.portionSize)?.price.toFixed(2) || '0.00'}
               </span>

@@ -16,20 +16,20 @@ export const SoupSelection: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Button
             onClick={() => setCurrentScreen('portion')}
             variant="outline"
             size="md"
-            className="mb-6"
+            className="mb-4 sm:mb-6"
           >
             ← {translations.back[language]}
           </Button>
           <ProgressBar currentStep={2} totalSteps={6} />
-          <h1 className="text-5xl font-bold text-gray-900 text-center mb-4">
+          <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.selectSoup[language]}
           </h1>
         </div>
@@ -53,7 +53,7 @@ export const SoupSelection: React.FC = () => {
             disabled={!order.soupBase}
             variant="primary"
             size="xl"
-            className="min-w-[400px]"
+            className="w-full sm:min-w-[400px]"
           >
             {translations.continue[language]}
           </Button>

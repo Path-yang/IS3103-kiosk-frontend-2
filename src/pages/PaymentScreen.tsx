@@ -45,21 +45,21 @@ export const PaymentScreen: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Button
             onClick={() => setCurrentScreen('review')}
             variant="outline"
             size="md"
-            className="mb-6"
+            className="mb-4 sm:mb-6"
             disabled={processing}
           >
             ← {translations.back[language]}
           </Button>
           <ProgressBar currentStep={6} totalSteps={6} />
-          <h1 className="text-5xl font-bold text-gray-900 text-center mb-4">
+          <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.selectPayment[language]}
           </h1>
         </div>
@@ -67,10 +67,10 @@ export const PaymentScreen: React.FC = () => {
         {processing ? (
           // Processing State
           <div className="bg-white rounded-2xl shadow-xl p-12 text-center">
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <div className="inline-block animate-spin rounded-full h-24 w-24 border-8 border-gray-200 border-t-primary"></div>
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               {translations.processing[language]}
             </h2>
             <p className="text-xl text-gray-600">{translations.securePayment[language]}</p>
@@ -123,7 +123,7 @@ export const PaymentScreen: React.FC = () => {
 
             {/* Security Notice */}
             <div className="bg-green-50 border-2 border-green-300 rounded-xl p-6 mb-8 flex items-center gap-4">
-              <div className="text-4xl">🔒</div>
+              <div className="text-2xl sm:text-4xl">🔒</div>
               <p className="text-lg text-green-800">{translations.securePayment[language]}</p>
             </div>
 
@@ -134,7 +134,7 @@ export const PaymentScreen: React.FC = () => {
                 disabled={!selectedMethod}
                 variant="success"
                 size="xl"
-                className="min-w-[500px]"
+                className="w-full sm:min-w-[500px]"
               >
                 {translations.confirmAndPay[language]}
               </Button>

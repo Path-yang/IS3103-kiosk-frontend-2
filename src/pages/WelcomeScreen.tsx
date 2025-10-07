@@ -18,68 +18,68 @@ export const WelcomeScreen: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-red-900 flex flex-col items-center justify-center p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-red-900 flex flex-col items-center justify-center p-4 sm:p-8 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent rounded-full blur-3xl" />
+        <div className="absolute top-10 left-10 sm:top-20 sm:left-20 w-32 h-32 sm:w-64 sm:h-64 bg-white rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-48 h-48 sm:w-96 sm:h-96 bg-accent rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-4xl w-full text-center">
+      <div className="relative z-10 max-w-4xl w-full text-center px-4">
         {/* Hero Image */}
-        <div className="mb-8">
-          <div className="w-48 h-48 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl mb-8">
-            <span className="text-8xl">🍜</span>
+        <div className="mb-6 sm:mb-8">
+          <div className="w-32 h-32 sm:w-48 sm:h-48 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl mb-4 sm:mb-8">
+            <span className="text-6xl sm:text-8xl">🍜</span>
           </div>
         </div>
 
         {/* Welcome Text */}
-        <h1 className="text-5xl font-bold text-white mb-4">{translations.welcome[language]}</h1>
-        <h2 className="text-6xl font-extrabold text-accent mb-12 drop-shadow-lg">
+        <h1 className="text-3xl sm:text-5xl font-bold text-white mb-3 sm:mb-4">{translations.welcome[language]}</h1>
+        <h2 className="text-4xl sm:text-6xl font-extrabold text-accent mb-8 sm:mb-12 drop-shadow-lg">
           {translations.restaurantName[language]}
         </h2>
 
         {/* Language Selection */}
-        <div className="mb-12">
-          <p className="text-2xl text-white mb-6 font-semibold">
+        <div className="mb-8 sm:mb-12">
+          <p className="text-xl sm:text-2xl text-white mb-4 sm:mb-6 font-semibold">
             {translations.selectLanguage[language]}
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => setLanguage(lang.code)}
                 className={`
-                  px-8 py-5 rounded-2xl font-bold text-xl transition-all duration-200
-                  active:scale-95 min-h-touch min-w-[200px] flex items-center justify-center gap-3
+                  px-4 py-3 sm:px-8 sm:py-5 rounded-xl sm:rounded-2xl font-bold text-base sm:text-xl transition-all duration-200
+                  active:scale-95 min-h-touch min-w-[140px] sm:min-w-[200px] flex items-center justify-center gap-2 sm:gap-3
                   ${
                     language === lang.code
-                      ? 'bg-accent text-gray-900 shadow-2xl scale-110'
+                      ? 'bg-accent text-gray-900 shadow-2xl scale-105 sm:scale-110'
                       : 'bg-white bg-opacity-20 text-white hover:bg-opacity-30 backdrop-blur'
                   }
                 `}
               >
-                <span className="text-3xl">{lang.flag}</span>
-                <span>{lang.label}</span>
+                <span className="text-2xl sm:text-3xl">{lang.flag}</span>
+                <span className="text-sm sm:text-base">{lang.label}</span>
               </button>
             ))}
           </div>
         </div>
 
         {/* Start Order Button */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Button
             onClick={handleStartOrder}
             variant="success"
             size="xl"
-            className="min-w-[400px] text-3xl py-8 shadow-2xl"
+            className="w-full sm:min-w-[400px] text-2xl sm:text-3xl py-6 sm:py-8 shadow-2xl"
           >
             {translations.startOrder[language]}
           </Button>
         </div>
 
         {/* Estimated Time */}
-        <p className="text-xl text-white text-opacity-90">{translations.estimatedTime[language]}</p>
+        <p className="text-base sm:text-xl text-white text-opacity-90">{translations.estimatedTime[language]}</p>
       </div>
     </div>
   );

@@ -27,20 +27,20 @@ export const CustomizationScreen: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Button
             onClick={() => setCurrentScreen('ingredients')}
             variant="outline"
             size="md"
-            className="mb-6"
+            className="mb-4 sm:mb-6"
           >
             ← {translations.back[language]}
           </Button>
           <ProgressBar currentStep={4} totalSteps={6} />
-          <h1 className="text-5xl font-bold text-gray-900 text-center mb-4">
+          <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.customizeOrder[language]}
           </h1>
         </div>
@@ -49,7 +49,7 @@ export const CustomizationScreen: React.FC = () => {
           {/* Spice Level - Only for non-dry pot */}
           {!isDryPot && (
             <section className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-3xl font-bold mb-6 text-gray-800">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800">
                 {translations.adjustSpice[language]}
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -66,7 +66,7 @@ export const CustomizationScreen: React.FC = () => {
                       }
                     `}
                   >
-                    <div className="text-4xl mb-2">{spice.icon}</div>
+                    <div className="text-2xl sm:text-4xl mb-2">{spice.icon}</div>
                     <div className="text-base font-semibold">{spice.label}</div>
                   </button>
                 ))}
@@ -76,7 +76,7 @@ export const CustomizationScreen: React.FC = () => {
 
           {/* Extra Toppings */}
           <section className="bg-white rounded-2xl p-8 shadow-lg">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800">
               {translations.extraToppings[language]}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -107,7 +107,7 @@ export const CustomizationScreen: React.FC = () => {
 
           {/* Add a Drink */}
           <section className="bg-white rounded-2xl p-8 shadow-lg">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800">
               {translations.addDrink[language]}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -138,7 +138,7 @@ export const CustomizationScreen: React.FC = () => {
 
           {/* Add a Side */}
           <section className="bg-white rounded-2xl p-8 shadow-lg">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800">
               {translations.addSide[language]}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -170,7 +170,7 @@ export const CustomizationScreen: React.FC = () => {
 
         {/* Continue Button */}
         <div className="flex justify-center mt-8">
-          <Button onClick={handleContinue} variant="primary" size="xl" className="min-w-[400px]">
+          <Button onClick={handleContinue} variant="primary" size="xl" className="w-full sm:min-w-[400px]">
             {translations.proceedToCheckout[language]}
           </Button>
         </div>

@@ -77,7 +77,7 @@ export const ConfirmationScreen: React.FC = () => {
 
           {/* Status */}
           <div className="text-center mb-8 pb-8 border-b-2 border-gray-200">
-            <p className="text-3xl font-semibold text-gray-800 mb-4">
+            <p className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
               {translations.preparingOrder[language]}
             </p>
             <div className="flex items-center justify-center gap-2 mb-4">
@@ -95,7 +95,7 @@ export const ConfirmationScreen: React.FC = () => {
               <p className="text-xl text-gray-700 mb-2">
                 {translations.estimatedWait[language]}
               </p>
-              <p className="text-5xl font-bold text-primary">
+              <p className="text-2xl sm:text-3xl sm:text-5xl font-bold text-primary">
                 {waitTime} {translations.minutes[language]}
               </p>
             </div>
@@ -104,7 +104,7 @@ export const ConfirmationScreen: React.FC = () => {
           {/* Total Amount */}
           <div className="text-center">
             <p className="text-2xl text-gray-600 mb-2">{translations.total[language]}</p>
-            <p className="text-5xl font-bold text-gray-900">${total.toFixed(2)}</p>
+            <p className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900">${total.toFixed(2)}</p>
           </div>
         </div>
 
@@ -120,7 +120,7 @@ export const ConfirmationScreen: React.FC = () => {
 
         {/* Start New Order Button */}
         <div className="text-center">
-          <Button onClick={handleNewOrder} variant="primary" size="xl" className="min-w-[400px]">
+          <Button onClick={handleNewOrder} variant="primary" size="xl" className="w-full sm:min-w-[400px]">
             {translations.startNewOrder[language]}
           </Button>
           <p className="text-lg text-gray-600 mt-4">
