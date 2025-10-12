@@ -72,7 +72,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Susu Gula Merah',
     },
     price: 5.5,
-    image: 'https://images.unsplash.com/photo-1558857563-b4d3b883c632?w=300&h=200&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Brown_sugar_boba_milk.jpg',
   },
   {
     id: 'lemon-tea',
@@ -112,7 +112,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Herba',
     },
     price: 3.5,
-    image: 'https://images.unsplash.com/photo-1563822249366-6ca3d8c5d9c0?w=300&h=200&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Chinese_herbal_tea.jpg',
   },
 ];
 
@@ -165,6 +165,6 @@ export const sides: Addon[] = [
       ms: 'Tat Telur',
     },
     price: 3.0,
-    image: 'https://images.unsplash.com/photo-1625500319800-7970448ad08c?w=300&h=200&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Portuguese_Egg_Tarts.jpg',
   },
 ];

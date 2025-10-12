@@ -36,18 +36,21 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
   const [idleTimer, setIdleTimer] = useState<number | null>(null);
 
-  // Idle timeout - return to welcome screen after 60 seconds
+  // Configurable idle timeout (0 disables auto-reset)
+  const idleTimeoutMs = 0; // disabled per request
+
+  // Idle timeout - return to welcome screen after configured delay
   const resetIdleTimer = () => {
-    if (idleTimer) {
-      clearTimeout(idleTimer);
+    if (idleTimer) clearTimeout(idleTimer);
+    if (idleTimeoutMs > 0) {
+      const timer = setTimeout(() => {
+        if (currentScreen !== 'welcome') {
+          setCurrentScreen('welcome');
+          clearOrder();
+        }
+      }, idleTimeoutMs);
+      setIdleTimer(timer);
     }
-    const timer = setTimeout(() => {
-      if (currentScreen !== 'welcome') {
-        setCurrentScreen('welcome');
-        clearOrder();
-      }
-    }, 60000); // 60 seconds
-    setIdleTimer(timer);
   };
 
   useEffect(() => {
