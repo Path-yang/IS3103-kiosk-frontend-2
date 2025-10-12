@@ -43,8 +43,7 @@ export const WeighingScreen: React.FC = () => {
     setTimeout(() => setIsWeighing(false), 1500);
   };
 
-  const pricePerKg = 25.0; // $25 per kg
-  const estimatedPrice = currentWeight * pricePerKg;
+  // Price display removed per request; weighing screen focuses on weight only
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 sm:p-8">
@@ -93,16 +92,7 @@ export const WeighingScreen: React.FC = () => {
               )}
             </div>
 
-            {/* Price Estimate */}
-            <div className="bg-accent-light rounded-xl p-6 mb-6">
-              <div className="text-gray-700 text-xl mb-2">{translations.estimatedPrice[language]}</div>
-              <div className="text-5xl font-bold text-gray-900">
-                ${estimatedPrice.toFixed(2)}
-              </div>
-              <div className="text-gray-600 text-lg mt-2">
-                (${pricePerKg.toFixed(2)} {translations.perKg[language]})
-              </div>
-            </div>
+            {/* Price estimate removed */}
 
             {/* Weight Guidelines */}
             <div className="bg-blue-50 border-2 border-blue-300 rounded-xl p-6">

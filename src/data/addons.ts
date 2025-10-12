@@ -9,7 +9,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Sos Bijan',
     },
     price: 1.5,
-    image: '/images/items/sesame-sauce.svg',
+    image: '/images/photos/addons/sesame-sauce.jpg',
   },
   {
     id: 'peanut-sauce',
@@ -19,7 +19,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Sos Kacang',
     },
     price: 1.5,
-    image: '/images/items/peanut-sauce.svg',
+    image: '/images/photos/addons/peanut-sauce.jpg',
   },
   {
     id: 'extra-cilantro',
@@ -29,7 +29,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Daun Ketumbar Tambahan',
     },
     price: 0.5,
-    image: '/images/items/cilantro.svg',
+    image: '/images/photos/addons/cilantro.jpg',
   },
   {
     id: 'extra-green-onions',
@@ -39,7 +39,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Daun Bawang Tambahan',
     },
     price: 0.5,
-    image: '/images/items/green-onions.svg',
+    image: '/images/photos/addons/green-onions.jpg',
   },
   {
     id: 'crispy-garlic',
@@ -49,7 +49,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Bawang Putih Rangup',
     },
     price: 1.0,
-    image: '/images/items/crispy-garlic.svg',
+    image: '/images/photos/addons/crispy-garlic.jpg',
   },
 ];
 
@@ -62,7 +62,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Susu',
     },
     price: 4.5,
-    image: '/images/items/milk-tea.svg',
+    image: '/images/photos/drinks/milk-tea.jpg',
   },
   {
     id: 'brown-sugar-milk',
@@ -72,7 +72,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Susu Gula Merah',
     },
     price: 5.5,
-    image: '/images/items/brown-sugar-milk-tea.svg',
+    image: '/images/photos/drinks/brown-sugar-milk-tea.jpg',
   },
   {
     id: 'lemon-tea',
@@ -82,7 +82,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Lemon',
     },
     price: 3.5,
-    image: '/images/items/lemon-tea.svg',
+    image: '/images/photos/drinks/lemon-tea.jpg',
   },
   {
     id: 'soda',
@@ -92,7 +92,7 @@ export const drinks: Addon[] = [
       ms: 'Minuman Ringan',
     },
     price: 2.5,
-    image: '/images/items/soda.svg',
+    image: '/images/photos/drinks/soft-drink.jpg',
   },
   {
     id: 'plum-juice',
@@ -102,7 +102,7 @@ export const drinks: Addon[] = [
       ms: 'Jus Plum',
     },
     price: 3.0,
-    image: '/images/items/plum-juice.svg',
+    image: '/images/photos/drinks/plum-juice.jpg',
   },
   {
     id: 'herbal-tea',
@@ -112,7 +112,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Herba',
     },
     price: 3.5,
-    image: '/images/items/herbal-tea.svg',
+    image: '/images/photos/drinks/herbal-tea.jpg',
   },
 ];
 
@@ -165,6 +165,6 @@ export const sides: Addon[] = [
       ms: 'Tat Telur',
     },
     price: 3.0,
-    image: '/images/items/egg-tart.svg',
+    image: '/images/photos/sides/egg-tart.jpg',
   },
 ];
