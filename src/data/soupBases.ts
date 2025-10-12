@@ -13,7 +13,7 @@ export const soupBases: SoupBase[] = [
       zh: '温和，奶油般，营养丰富',
       ms: 'Lembut, berkrim & berkhasiat',
     },
-    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop',
     spiceLevel: 0,
   },
   {
@@ -43,7 +43,7 @@ export const soupBases: SoupBase[] = [
       zh: '酸甜开胃',
       ms: 'Masam & segar',
     },
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1564834744159-ff0ea41ba4b9?w=400&h=300&fit=crop',
     spiceLevel: 0,
   },
   {
@@ -58,7 +58,7 @@ export const soupBases: SoupBase[] = [
       zh: '鲜美浓郁',
       ms: 'Umami & gurih',
     },
-    image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&h=300&fit=crop',
     spiceLevel: 0,
   },
   {
@@ -88,7 +88,7 @@ export const soupBases: SoupBase[] = [
       zh: '干锅炒制',
       ms: 'Goreng kering, tanpa sup',
     },
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&h=300&fit=crop',
     spiceLevel: 5,
     isDryPot: true,
   },
