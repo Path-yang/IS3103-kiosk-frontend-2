@@ -7,12 +7,13 @@ import { CustomizationScreen } from './pages/CustomizationScreen';
 import { ReviewScreen } from './pages/ReviewScreen';
 import { PaymentScreen } from './pages/PaymentScreen';
 import { ConfirmationScreen } from './pages/ConfirmationScreen';
+import { PriceSidebar } from './components/PriceSidebar';
 
 const AppContent: React.FC = () => {
   const { currentScreen } = useOrder();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen lg:pr-80 relative">
       {currentScreen === 'welcome' && <WelcomeScreen />}
       {currentScreen === 'weighing' && <WeighingScreen />}
       {currentScreen === 'soup' && <SoupSelection />}
@@ -20,6 +21,7 @@ const AppContent: React.FC = () => {
       {currentScreen === 'review' && <ReviewScreen />}
       {currentScreen === 'payment' && <PaymentScreen />}
       {currentScreen === 'confirmation' && <ConfirmationScreen />}
+      <PriceSidebar />
     </div>
   );
 };
