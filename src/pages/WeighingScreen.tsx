@@ -13,18 +13,18 @@ export const WeighingScreen: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       // Simulate fluctuating weight reading
-      const randomWeight = Math.random() * 0.05; // Small fluctuation
+      const randomWeight = Math.random() * 0.1; // Faster accumulation to finish in 1.5s
       setCurrentWeight((prev) => {
         const newWeight = prev + randomWeight;
         return Math.min(newWeight, 2.5); // Max 2.5kg
       });
     }, 100);
 
-    // Stop weighing after 3 seconds
+    // Stop weighing after 1.5 seconds
     const timeout = setTimeout(() => {
       setIsWeighing(false);
       clearInterval(interval);
-    }, 3000);
+    }, 1500);
 
     return () => {
       clearInterval(interval);
@@ -40,7 +40,7 @@ export const WeighingScreen: React.FC = () => {
   const handleReweigh = () => {
     setCurrentWeight(0);
     setIsWeighing(true);
-    setTimeout(() => setIsWeighing(false), 3000);
+    setTimeout(() => setIsWeighing(false), 1500);
   };
 
   const pricePerKg = 25.0; // $25 per kg
