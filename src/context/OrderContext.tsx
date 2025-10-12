@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Order, Screen, Language, PortionSize, SpiceLevel } from '../types';
+import { Order, Screen, Language, SpiceLevel } from '../types';
+import { sauceAddons, drinks, sides } from '../data/addons';
 
 interface OrderContextType {
   order: Order;
@@ -7,27 +8,21 @@ interface OrderContextType {
   currentScreen: Screen;
   setLanguage: (lang: Language) => void;
   setCurrentScreen: (screen: Screen) => void;
-  setPortionSize: (size: PortionSize) => void;
+  setWeight: (weight: number) => void;
   setSoupBase: (soupId: string) => void;
-  addIngredient: (ingredientId: string) => void;
-  removeIngredient: (ingredientId: string) => void;
-  updateIngredientQuantity: (ingredientId: string, quantity: number) => void;
   setSpiceLevel: (level: SpiceLevel) => void;
   toggleAddon: (addonId: string) => void;
   toggleDrink: (drinkId: string) => void;
   toggleSide: (sideId: string) => void;
   clearOrder: () => void;
   getTotalPrice: () => number;
-  getIngredientQuantity: (ingredientId: string) => number;
-  getTotalItems: () => number;
 }
 
 const OrderContext = createContext<OrderContextType | undefined>(undefined);
 
 const initialOrder: Order = {
-  portionSize: null,
+  weight: null,
   soupBase: null,
-  ingredients: [],
   spiceLevel: 'mild',
   addons: [],
   drinks: [],
@@ -72,66 +67,12 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     };
   }, [idleTimer]);
 
-  const setPortionSize = (size: PortionSize) => {
-    setOrder((prev) => ({ ...prev, portionSize: size }));
+  const setWeight = (weight: number) => {
+    setOrder((prev) => ({ ...prev, weight }));
   };
 
   const setSoupBase = (soupId: string) => {
     setOrder((prev) => ({ ...prev, soupBase: soupId }));
-  };
-
-  const addIngredient = (ingredientId: string) => {
-    setOrder((prev) => {
-      const existingIndex = prev.ingredients.findIndex((i) => i.id === ingredientId);
-      if (existingIndex >= 0) {
-        const updated = [...prev.ingredients];
-        updated[existingIndex].quantity += 1;
-        return { ...prev, ingredients: updated };
-      }
-      return {
-        ...prev,
-        ingredients: [...prev.ingredients, { id: ingredientId, quantity: 1 }],
-      };
-    });
-  };
-
-  const removeIngredient = (ingredientId: string) => {
-    setOrder((prev) => {
-      const existingIndex = prev.ingredients.findIndex((i) => i.id === ingredientId);
-      if (existingIndex >= 0) {
-        const updated = [...prev.ingredients];
-        if (updated[existingIndex].quantity > 1) {
-          updated[existingIndex].quantity -= 1;
-          return { ...prev, ingredients: updated };
-        }
-        return {
-          ...prev,
-          ingredients: prev.ingredients.filter((i) => i.id !== ingredientId),
-        };
-      }
-      return prev;
-    });
-  };
-
-  const updateIngredientQuantity = (ingredientId: string, quantity: number) => {
-    setOrder((prev) => {
-      if (quantity <= 0) {
-        return {
-          ...prev,
-          ingredients: prev.ingredients.filter((i) => i.id !== ingredientId),
-        };
-      }
-      const existingIndex = prev.ingredients.findIndex((i) => i.id === ingredientId);
-      if (existingIndex >= 0) {
-        const updated = [...prev.ingredients];
-        updated[existingIndex].quantity = quantity;
-        return { ...prev, ingredients: updated };
-      }
-      return {
-        ...prev,
-        ingredients: [...prev.ingredients, { id: ingredientId, quantity }],
-      };
-    });
   };
 
   const setSpiceLevel = (level: SpiceLevel) => {
@@ -179,41 +120,33 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const getTotalPrice = (): number => {
-    // Import price data
-    const portionPrices: Record<string, number> = {
-      small: 12.95,
-      regular: 18.95,
-      large: 24.95,
-      xlarge: 32.95,
-    };
-
+    const pricePerKg = 25.0; // $25 per kg
     let total = 0;
 
-    // Add portion price
-    if (order.portionSize) {
-      total += portionPrices[order.portionSize] || 0;
+    // Add weight-based price
+    if (order.weight) {
+      total += order.weight * pricePerKg;
     }
 
-    // Add addon prices (would need to import actual prices)
-    // Simplified for now - each addon ~$1
-    total += order.addons.length * 1.0;
+    // Add addon prices
+    order.addons.forEach((addonId) => {
+      const addon = sauceAddons.find((a) => a.id === addonId);
+      if (addon) total += addon.price;
+    });
 
-    // Add drink prices (~$4 each)
-    total += order.drinks.length * 4.0;
+    // Add drink prices
+    order.drinks.forEach((drinkId) => {
+      const drink = drinks.find((d) => d.id === drinkId);
+      if (drink) total += drink.price;
+    });
 
-    // Add side prices (~$5 each)
-    total += order.sides.length * 5.0;
+    // Add side prices
+    order.sides.forEach((sideId) => {
+      const side = sides.find((s) => s.id === sideId);
+      if (side) total += side.price;
+    });
 
     return total;
-  };
-
-  const getIngredientQuantity = (ingredientId: string): number => {
-    const ingredient = order.ingredients.find((i) => i.id === ingredientId);
-    return ingredient ? ingredient.quantity : 0;
-  };
-
-  const getTotalItems = (): number => {
-    return order.ingredients.reduce((sum, item) => sum + item.quantity, 0);
   };
 
   return (
@@ -224,19 +157,14 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         currentScreen,
         setLanguage,
         setCurrentScreen,
-        setPortionSize,
+        setWeight,
         setSoupBase,
-        addIngredient,
-        removeIngredient,
-        updateIngredientQuantity,
         setSpiceLevel,
         toggleAddon,
         toggleDrink,
         toggleSide,
         clearOrder,
         getTotalPrice,
-        getIngredientQuantity,
-        getTotalItems,
       }}
     >
       {children}

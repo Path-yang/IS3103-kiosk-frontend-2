@@ -28,6 +28,73 @@ export const translations: Record<string, Translation> = {
     ms: 'Anggaran masa: 10-15 minit',
   },
 
+  // Weighing Screen
+  weighYourFood: {
+    en: 'Weigh Your Food',
+    zh: '称重您的食物',
+    ms: 'Timbang Makanan Anda',
+  },
+  placeOnScale: {
+    en: 'Please place your bowl on the scale',
+    zh: '请将您的碗放在秤上',
+    ms: 'Sila letakkan mangkuk anda di atas penimbang',
+  },
+  weight: {
+    en: 'Weight',
+    zh: '重量',
+    ms: 'Berat',
+  },
+  weighing: {
+    en: 'Weighing...',
+    zh: '称重中...',
+    ms: 'Menimbang...',
+  },
+  estimatedPrice: {
+    en: 'Estimated Price',
+    zh: '预估价格',
+    ms: 'Anggaran Harga',
+  },
+  perKg: {
+    en: 'per kg',
+    zh: '每公斤',
+    ms: 'setiap kg',
+  },
+  weightGuideline: {
+    en: 'Weight Guidelines',
+    zh: '重量指南',
+    ms: 'Panduan Berat',
+  },
+  lightMeal: {
+    en: 'Light Meal',
+    zh: '轻食',
+    ms: 'Makanan Ringan',
+  },
+  regularMeal: {
+    en: 'Regular Meal',
+    zh: '标准餐',
+    ms: 'Makanan Biasa',
+  },
+  largeMeal: {
+    en: 'Large Meal',
+    zh: '大份餐',
+    ms: 'Makanan Besar',
+  },
+  reweigh: {
+    en: 'Reweigh',
+    zh: '重新称重',
+    ms: 'Timbang Semula',
+  },
+  confirmWeight: {
+    en: 'Confirm Weight',
+    zh: '确认重量',
+    ms: 'Sahkan Berat',
+  },
+  noWeightDetected: {
+    en: 'No weight detected. Please ensure your bowl is on the scale.',
+    zh: '未检测到重量。请确保您的碗在秤上。',
+    ms: 'Tiada berat dikesan. Sila pastikan mangkuk anda di atas penimbang.',
+  },
+
   // Portion Size Screen
   selectPortion: {
     en: 'Select Your Portion Size',

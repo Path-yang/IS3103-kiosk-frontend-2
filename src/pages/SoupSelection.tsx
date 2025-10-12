@@ -11,7 +11,7 @@ export const SoupSelection: React.FC = () => {
 
   const handleContinue = () => {
     if (order.soupBase) {
-      setCurrentScreen('ingredients');
+      setCurrentScreen('customization');
     }
   };
 
@@ -21,14 +21,14 @@ export const SoupSelection: React.FC = () => {
         {/* Header */}
         <div className="mb-6 sm:mb-8">
           <Button
-            onClick={() => setCurrentScreen('portion')}
+            onClick={() => setCurrentScreen('weighing')}
             variant="outline"
             size="md"
             className="mb-4 sm:mb-6"
           >
             ← {translations.back[language]}
           </Button>
-          <ProgressBar currentStep={2} totalSteps={6} />
+          <ProgressBar currentStep={2} totalSteps={5} />
           <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.selectSoup[language]}
           </h1>

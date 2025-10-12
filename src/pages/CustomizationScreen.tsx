@@ -32,14 +32,14 @@ export const CustomizationScreen: React.FC = () => {
         {/* Header */}
         <div className="mb-6 sm:mb-8">
           <Button
-            onClick={() => setCurrentScreen('ingredients')}
+            onClick={() => setCurrentScreen('soup')}
             variant="outline"
             size="md"
             className="mb-4 sm:mb-6"
           >
             ← {translations.back[language]}
           </Button>
-          <ProgressBar currentStep={4} totalSteps={6} />
+          <ProgressBar currentStep={3} totalSteps={5} />
           <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.customizeOrder[language]}
           </h1>

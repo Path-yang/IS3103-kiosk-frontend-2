@@ -6,17 +6,6 @@ export interface Translation {
   ms: string;
 }
 
-export type Category = 'vegetable' | 'meat' | 'seafood' | 'tofu-noodles';
-
-export interface Ingredient {
-  id: string;
-  name: Translation;
-  category: Category;
-  image: string;
-  popular: boolean;
-  allergens?: string[];
-}
-
 export interface SoupBase {
   id: string;
   name: Translation;
@@ -24,15 +13,6 @@ export interface SoupBase {
   image: string;
   spiceLevel: number; // 0-5
   isDryPot?: boolean;
-}
-
-export type PortionSize = 'small' | 'regular' | 'large' | 'xlarge';
-
-export interface PortionOption {
-  id: PortionSize;
-  name: Translation;
-  weight: string;
-  price: number;
 }
 
 export interface Addon {
@@ -44,15 +24,9 @@ export interface Addon {
 
 export type SpiceLevel = 'mild' | 'medium' | 'spicy' | 'extra-spicy' | 'extreme';
 
-export interface OrderIngredient {
-  id: string;
-  quantity: number;
-}
-
 export interface Order {
-  portionSize: PortionSize | null;
+  weight: number | null; // Weight in kg
   soupBase: string | null;
-  ingredients: OrderIngredient[];
   spiceLevel: SpiceLevel;
   addons: string[];
   drinks: string[];
@@ -61,9 +35,8 @@ export interface Order {
 
 export type Screen =
   | 'welcome'
-  | 'portion'
+  | 'weighing'
   | 'soup'
-  | 'ingredients'
   | 'customization'
   | 'review'
   | 'payment'

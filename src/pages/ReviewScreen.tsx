@@ -1,8 +1,6 @@
 import React from 'react';
 import { useOrder } from '../context/OrderContext';
 import { translations } from '../data/translations';
-import { ingredients } from '../data/ingredients';
-import { portionSizes } from '../data/portionSizes';
 import { soupBases } from '../data/soupBases';
 import { sauceAddons, drinks, sides } from '../data/addons';
 import { Button } from '../components/Button';
@@ -11,8 +9,8 @@ import { ProgressBar } from '../components/ProgressBar';
 export const ReviewScreen: React.FC = () => {
   const { order, language, setCurrentScreen, getTotalPrice } = useOrder();
 
-  const portionInfo = portionSizes.find((p) => p.id === order.portionSize);
   const soupInfo = soupBases.find((s) => s.id === order.soupBase);
+  const pricePerKg = 25.0;
 
   const subtotal = getTotalPrice();
   const tax = subtotal * 0.07;
@@ -35,28 +33,33 @@ export const ReviewScreen: React.FC = () => {
           >
             ← {translations.back[language]}
           </Button>
-          <ProgressBar currentStep={5} totalSteps={6} />
+          <ProgressBar currentStep={4} totalSteps={5} />
           <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.orderSummary[language]}
           </h1>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-          {/* Portion Size */}
+          {/* Weight */}
           <section className="mb-6 pb-6 border-b border-gray-200">
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                  {translations.portionSize[language]}
+                  {translations.weight[language]}
                 </h3>
                 <p className="text-lg text-gray-600">
-                  {portionInfo?.name[language]} ({portionInfo?.weight})
+                  {order.weight?.toFixed(2)} kg
+                </p>
+                <p className="text-sm text-gray-500">
+                  ${pricePerKg.toFixed(2)} {translations.perKg[language]}
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-2xl font-bold text-primary">${portionInfo?.price.toFixed(2)}</p>
+                <p className="text-2xl font-bold text-primary">
+                  ${(order.weight ? order.weight * pricePerKg : 0).toFixed(2)}
+                </p>
                 <button
-                  onClick={() => setCurrentScreen('portion')}
+                  onClick={() => setCurrentScreen('weighing')}
                   className="text-sm text-blue-600 hover:underline mt-1"
                 >
                   {translations.edit[language]}
@@ -81,33 +84,6 @@ export const ReviewScreen: React.FC = () => {
               >
                 {translations.edit[language]}
               </button>
-            </div>
-          </section>
-
-          {/* Ingredients */}
-          <section className="mb-6 pb-6 border-b border-gray-200">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-2xl font-bold text-gray-800">
-                {translations.ingredients[language]} ({order.ingredients.length})
-              </h3>
-              <button
-                onClick={() => setCurrentScreen('ingredients')}
-                className="text-sm text-blue-600 hover:underline"
-              >
-                {translations.edit[language]}
-              </button>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {order.ingredients.map((item) => {
-                const ingredient = ingredients.find((i) => i.id === item.id);
-                if (!ingredient) return null;
-                return (
-                  <div key={item.id} className="bg-gray-50 rounded-lg p-3 flex justify-between">
-                    <span className="text-gray-700">{ingredient.name[language]}</span>
-                    <span className="text-primary font-semibold">×{item.quantity}</span>
-                  </div>
-                );
-              })}
             </div>
           </section>
 

@@ -58,7 +58,7 @@ export const PaymentScreen: React.FC = () => {
           >
             ← {translations.back[language]}
           </Button>
-          <ProgressBar currentStep={6} totalSteps={6} />
+          <ProgressBar currentStep={5} totalSteps={5} />
           <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.selectPayment[language]}
           </h1>
