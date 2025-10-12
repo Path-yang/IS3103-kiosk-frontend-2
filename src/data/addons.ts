@@ -9,7 +9,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Sos Bijan',
     },
     price: 1.5,
-    image: 'https://images.unsplash.com/photo-1564834744159-ff0ea41ba4b9?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/sesame-sauce.svg',
   },
   {
     id: 'peanut-sauce',
@@ -19,7 +19,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Sos Kacang',
     },
     price: 1.5,
-    image: 'https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/peanut-sauce.svg',
   },
   {
     id: 'extra-cilantro',
@@ -29,7 +29,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Daun Ketumbar Tambahan',
     },
     price: 0.5,
-    image: 'https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/cilantro.svg',
   },
   {
     id: 'extra-green-onions',
@@ -39,7 +39,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Daun Bawang Tambahan',
     },
     price: 0.5,
-    image: 'https://images.unsplash.com/photo-1553163147-622ab57be57c?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/green-onions.svg',
   },
   {
     id: 'crispy-garlic',
@@ -49,7 +49,7 @@ export const sauceAddons: Addon[] = [
       ms: 'Bawang Putih Rangup',
     },
     price: 1.0,
-    image: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/crispy-garlic.svg',
   },
 ];
 
@@ -62,7 +62,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Susu',
     },
     price: 4.5,
-    image: 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/milk-tea.svg',
   },
   {
     id: 'brown-sugar-milk',
@@ -72,7 +72,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Susu Gula Merah',
     },
     price: 5.5,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Brown_sugar_boba_milk.jpg',
+    image: '/images/items/brown-sugar-milk-tea.svg',
   },
   {
     id: 'lemon-tea',
@@ -82,7 +82,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Lemon',
     },
     price: 3.5,
-    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/lemon-tea.svg',
   },
   {
     id: 'soda',
@@ -92,7 +92,7 @@ export const drinks: Addon[] = [
       ms: 'Minuman Ringan',
     },
     price: 2.5,
-    image: 'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/soda.svg',
   },
   {
     id: 'plum-juice',
@@ -102,7 +102,7 @@ export const drinks: Addon[] = [
       ms: 'Jus Plum',
     },
     price: 3.0,
-    image: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=300&h=200&fit=crop&q=80',
+    image: '/images/items/plum-juice.svg',
   },
   {
     id: 'herbal-tea',
@@ -112,7 +112,7 @@ export const drinks: Addon[] = [
       ms: 'Teh Herba',
     },
     price: 3.5,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Chinese_herbal_tea.jpg',
+    image: '/images/items/herbal-tea.svg',
   },
 ];
 
@@ -165,6 +165,6 @@ export const sides: Addon[] = [
       ms: 'Tat Telur',
     },
     price: 3.0,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Portuguese_Egg_Tarts.jpg',
+    image: '/images/items/egg-tart.svg',
   },
 ];

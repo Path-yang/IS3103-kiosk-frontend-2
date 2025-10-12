@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <rect width="400" height="240" rx="16" fill="#e0f2fe"/>
+  <ellipse cx="200" cy="140" rx="160" ry="60" fill="#bae6fd"/>
+  <ellipse cx="200" cy="150" rx="170" ry="50" fill="#93c5fd"/>
+  <text x="200" y="220" font-family="Arial" font-size="20" text-anchor="middle" fill="#1e3a8a">Collagen Soup</text>
+</svg>
