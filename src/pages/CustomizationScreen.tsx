@@ -43,6 +43,13 @@ export const CustomizationScreen: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
             {translations.customizeOrder[language]}
           </h1>
+          {selectedSoup && (
+            <div className="mt-2 text-center text-gray-700">
+              <span className="font-semibold">{selectedSoup.name[language]}</span>
+              <span className="mx-2">•</span>
+              <span className="text-primary font-bold">${selectedSoup.price.toFixed(2)}</span>
+            </div>
+          )}
         </div>
 
         <div className="space-y-8">
@@ -96,6 +103,9 @@ export const CustomizationScreen: React.FC = () => {
                   <img
                     src={addon.image}
                     alt={addon.name[language]}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/images/placeholder.svg';
+                    }}
                     className="w-full h-20 object-cover rounded-lg mb-2"
                   />
                   <div className="text-sm font-semibold">{addon.name[language]}</div>
@@ -127,6 +137,9 @@ export const CustomizationScreen: React.FC = () => {
                   <img
                     src={drink.image}
                     alt={drink.name[language]}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/images/placeholder.svg';
+                    }}
                     className="w-full h-32 object-cover rounded-lg mb-2"
                   />
                   <div className="text-base font-semibold">{drink.name[language]}</div>
@@ -158,6 +171,9 @@ export const CustomizationScreen: React.FC = () => {
                   <img
                     src={side.image}
                     alt={side.name[language]}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/images/placeholder.svg';
+                    }}
                     className="w-full h-32 object-cover rounded-lg mb-2"
                   />
                   <div className="text-base font-semibold">{side.name[language]}</div>

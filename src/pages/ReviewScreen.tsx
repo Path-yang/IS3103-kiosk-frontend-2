@@ -78,12 +78,17 @@ export const ReviewScreen: React.FC = () => {
                 <p className="text-lg text-gray-600">{soupInfo?.name[language]}</p>
                 <p className="text-sm text-gray-500">{soupInfo?.description[language]}</p>
               </div>
-              <button
-                onClick={() => setCurrentScreen('soup')}
-                className="text-sm text-blue-600 hover:underline"
-              >
-                {translations.edit[language]}
-              </button>
+              <div className="text-right">
+                {soupInfo && (
+                  <p className="text-xl font-semibold text-primary mb-1">${soupInfo.price.toFixed(2)}</p>
+                )}
+                <button
+                  onClick={() => setCurrentScreen('soup')}
+                  className="text-sm text-blue-600 hover:underline"
+                >
+                  {translations.edit[language]}
+                </button>
+              </div>
             </div>
           </section>
 

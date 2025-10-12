@@ -14,6 +14,7 @@ export const soupBases: SoupBase[] = [
       ms: 'Lembut, berkrim & berkhasiat',
     },
     image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop',
+    price: 2.0,
     spiceLevel: 0,
   },
   {
@@ -29,6 +30,7 @@ export const soupBases: SoupBase[] = [
       ms: 'Kebas & pedas',
     },
     image: 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&h=300&fit=crop',
+    price: 2.5,
     spiceLevel: 4,
   },
   {
@@ -44,6 +46,7 @@ export const soupBases: SoupBase[] = [
       ms: 'Masam & segar',
     },
     image: 'https://images.unsplash.com/photo-1564834744159-ff0ea41ba4b9?w=400&h=300&fit=crop',
+    price: 2.0,
     spiceLevel: 0,
   },
   {
@@ -59,6 +62,7 @@ export const soupBases: SoupBase[] = [
       ms: 'Umami & gurih',
     },
     image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&h=300&fit=crop',
+    price: 2.5,
     spiceLevel: 0,
   },
   {
@@ -74,6 +78,7 @@ export const soupBases: SoupBase[] = [
       ms: 'Masam & pedas',
     },
     image: 'https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=400&h=300&fit=crop',
+    price: 3.0,
     spiceLevel: 3,
   },
   {
@@ -89,6 +94,7 @@ export const soupBases: SoupBase[] = [
       ms: 'Goreng kering, tanpa sup',
     },
     image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&h=300&fit=crop',
+    price: 3.5,
     spiceLevel: 5,
     isDryPot: true,
   },

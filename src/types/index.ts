@@ -12,6 +12,7 @@ export interface SoupBase {
   description: Translation;
   image: string;
   spiceLevel: number; // 0-5
+  price: number;
   isDryPot?: boolean;
 }
 

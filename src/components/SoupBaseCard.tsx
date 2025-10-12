@@ -31,8 +31,15 @@ export const SoupBaseCard: React.FC<SoupBaseCardProps> = ({ soup, selected, onCl
     >
       {/* Image */}
       <div className="relative h-40 overflow-hidden">
-        <img src={soup.image} alt={soup.name[language]} className="w-full h-full object-cover" />
-        {selected && (
+        <img
+          src={soup.image}
+          alt={soup.name[language]}
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = '/images/placeholder.svg';
+          }}
+          className="w-full h-full object-cover"
+        />
+      {selected && (
           <div className="absolute top-3 right-3 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg">
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -48,7 +55,8 @@ export const SoupBaseCard: React.FC<SoupBaseCardProps> = ({ soup, selected, onCl
       {/* Content */}
       <div className="flex-1 p-6 bg-white flex flex-col">
         <h3 className="text-xl font-bold mb-2 text-gray-800">{soup.name[language]}</h3>
-        <p className="text-base text-gray-600 mb-3 flex-1">{soup.description[language]}</p>
+        <p className="text-base text-gray-600 mb-2 flex-1">{soup.description[language]}</p>
+        <p className="text-lg font-bold text-primary mb-2">${soup.price.toFixed(2)}</p>
         <div className="flex items-center justify-center text-2xl">{renderSpiceLevel()}</div>
       </div>
     </button>

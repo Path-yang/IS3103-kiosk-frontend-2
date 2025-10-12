@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Order, Screen, Language, SpiceLevel } from '../types';
 import { sauceAddons, drinks, sides } from '../data/addons';
+import { soupBases } from '../data/soupBases';
 
 interface OrderContextType {
   order: Order;
@@ -126,6 +127,12 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     // Add weight-based price
     if (order.weight) {
       total += order.weight * pricePerKg;
+    }
+
+    // Add soup base price
+    if (order.soupBase) {
+      const soup = soupBases.find((s) => s.id === order.soupBase);
+      if (soup) total += soup.price;
     }
 
     // Add addon prices
