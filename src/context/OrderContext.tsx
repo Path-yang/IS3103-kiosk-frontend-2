@@ -9,7 +9,7 @@ interface OrderContextType {
   currentScreen: Screen;
   setLanguage: (lang: Language) => void;
   setCurrentScreen: (screen: Screen) => void;
-  setWeight: (weight: number) => void;
+  setWeight: (weight: number | null) => void;
   setSoupBase: (soupId: string) => void;
   setSpiceLevel: (level: SpiceLevel) => void;
   toggleAddon: (addonId: string) => void;
@@ -71,7 +71,7 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     };
   }, [idleTimer]);
 
-  const setWeight = (weight: number) => {
+  const setWeight = (weight: number | null) => {
     setOrder((prev) => ({ ...prev, weight }));
   };
 

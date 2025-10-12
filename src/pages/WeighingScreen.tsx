@@ -11,16 +11,15 @@ export const WeighingScreen: React.FC = () => {
 
   // Simulate weight reading (in a real implementation, this would come from a scale API)
   useEffect(() => {
+    if (!isWeighing) return;
+    // Clear price while weighing
+    setWeight(null);
+
     const interval = setInterval(() => {
-      // Simulate fluctuating weight reading
       const randomWeight = Math.random() * 0.1; // Faster accumulation to finish in 1.5s
-      setCurrentWeight((prev) => {
-        const newWeight = prev + randomWeight;
-        return Math.min(newWeight, 2.5); // Max 2.5kg
-      });
+      setCurrentWeight((prev) => Math.min(prev + randomWeight, 2.5));
     }, 100);
 
-    // Stop weighing after 1.5 seconds
     const timeout = setTimeout(() => {
       setIsWeighing(false);
       clearInterval(interval);
@@ -30,7 +29,16 @@ export const WeighingScreen: React.FC = () => {
       clearInterval(interval);
       clearTimeout(timeout);
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isWeighing]);
+
+  // When weighing stops, sync final weight to context for pricing
+  useEffect(() => {
+    if (!isWeighing) {
+      setWeight(currentWeight);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isWeighing]);
 
   const handleConfirmWeight = () => {
     setWeight(currentWeight);
@@ -40,7 +48,6 @@ export const WeighingScreen: React.FC = () => {
   const handleReweigh = () => {
     setCurrentWeight(0);
     setIsWeighing(true);
-    setTimeout(() => setIsWeighing(false), 1500);
   };
 
   // Price display removed per request; weighing screen focuses on weight only
