@@ -16,13 +16,13 @@ export const MemberLoginScreen: React.FC = () => {
     {
       id: '1',
       name: 'John Doe',
-      phoneNumber: '12345678',
+      phoneNumber: '91234567',
       points: 1500,
     },
     {
       id: '2',
       name: '张伟',
-      phoneNumber: '87654321',
+      phoneNumber: '97654321',
       points: 2500,
     },
     {
@@ -107,11 +107,11 @@ export const MemberLoginScreen: React.FC = () => {
                 type="tel"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
-                placeholder="12345678"
+                placeholder="91234567"
                 maxLength={8}
                 className="w-full px-6 py-5 text-2xl border-4 border-gray-300 rounded-2xl focus:border-primary focus:outline-none transition-colors"
               />
-              <p className="text-sm text-gray-500 mt-2">Demo: Try 12345678, 87654321, or 98765432</p>
+              <p className="text-sm text-gray-500 mt-2">Demo: Try 91234567, 97654321, or 98765432</p>
             </div>
 
             {/* Error Message */}
