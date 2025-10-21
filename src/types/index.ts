@@ -36,6 +36,7 @@ export interface Order {
 
 export type Screen =
   | 'welcome'
+  | 'memberLogin'
   | 'weighing'
   | 'soup'
   | 'customization'
@@ -47,4 +48,11 @@ export interface PaymentMethod {
   id: string;
   name: Translation;
   icon: string;
+}
+
+export interface Member {
+  id: string;
+  name: string;
+  points: number;
+  phoneNumber: string;
 }

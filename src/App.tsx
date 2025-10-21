@@ -1,6 +1,7 @@
 import React from 'react';
 import { OrderProvider, useOrder } from './context/OrderContext';
 import { WelcomeScreen } from './pages/WelcomeScreen';
+import { MemberLoginScreen } from './pages/MemberLoginScreen';
 import { WeighingScreen } from './pages/WeighingScreen';
 import { SoupSelection } from './pages/SoupSelection';
 import { CustomizationScreen } from './pages/CustomizationScreen';
@@ -15,6 +16,7 @@ const AppContent: React.FC = () => {
   return (
     <div className="min-h-screen lg:pr-80 relative">
       {currentScreen === 'welcome' && <WelcomeScreen />}
+      {currentScreen === 'memberLogin' && <MemberLoginScreen />}
       {currentScreen === 'weighing' && <WeighingScreen />}
       {currentScreen === 'soup' && <SoupSelection />}
       {currentScreen === 'customization' && <CustomizationScreen />}

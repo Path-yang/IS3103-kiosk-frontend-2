@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Order, Screen, Language, SpiceLevel } from '../types';
+import { Order, Screen, Language, SpiceLevel, Member } from '../types';
 import { sauceAddons, drinks, sides } from '../data/addons';
 import { soupBases } from '../data/soupBases';
 
@@ -7,6 +7,8 @@ interface OrderContextType {
   order: Order;
   language: Language;
   currentScreen: Screen;
+  member: Member | null;
+  pointsToRedeem: number;
   setLanguage: (lang: Language) => void;
   setCurrentScreen: (screen: Screen) => void;
   setWeight: (weight: number | null) => void;
@@ -15,8 +17,12 @@ interface OrderContextType {
   toggleAddon: (addonId: string) => void;
   toggleDrink: (drinkId: string) => void;
   toggleSide: (sideId: string) => void;
+  setMember: (member: Member | null) => void;
+  setPointsToRedeem: (points: number) => void;
   clearOrder: () => void;
   getTotalPrice: () => number;
+  getFinalPrice: () => number;
+  getPointsDiscount: () => number;
 }
 
 const OrderContext = createContext<OrderContextType | undefined>(undefined);
@@ -34,6 +40,8 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [order, setOrder] = useState<Order>(initialOrder);
   const [language, setLanguage] = useState<Language>('en');
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
+  const [member, setMember] = useState<Member | null>(null);
+  const [pointsToRedeem, setPointsToRedeem] = useState<number>(0);
   const [idleTimer, setIdleTimer] = useState<number | null>(null);
 
   // Configurable idle timeout (0 disables auto-reset)
@@ -121,6 +129,8 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const clearOrder = () => {
     setOrder(initialOrder);
+    setMember(null);
+    setPointsToRedeem(0);
   };
 
   const getTotalPrice = (): number => {
@@ -159,12 +169,26 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     return total;
   };
 
+  // Calculate discount from points (100 points = $1 discount)
+  const getPointsDiscount = (): number => {
+    return pointsToRedeem / 100;
+  };
+
+  // Calculate final price after points discount
+  const getFinalPrice = (): number => {
+    const subtotal = getTotalPrice();
+    const discount = getPointsDiscount();
+    return Math.max(0, subtotal - discount);
+  };
+
   return (
     <OrderContext.Provider
       value={{
         order,
         language,
         currentScreen,
+        member,
+        pointsToRedeem,
         setLanguage,
         setCurrentScreen,
         setWeight,
@@ -173,8 +197,12 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         toggleAddon,
         toggleDrink,
         toggleSide,
+        setMember,
+        setPointsToRedeem,
         clearOrder,
         getTotalPrice,
+        getFinalPrice,
+        getPointsDiscount,
       }}
     >
       {children}

@@ -28,6 +28,103 @@ export const translations: Record<string, Translation> = {
     ms: 'Anggaran masa: 10-15 minit',
   },
 
+  // Member Login Screen
+  memberOrGuest: {
+    en: 'Member or Guest?',
+    zh: '会员或游客？',
+    ms: 'Ahli atau Tetamu?',
+  },
+  loginAsMember: {
+    en: 'Login as Member',
+    zh: '会员登录',
+    ms: 'Log Masuk sebagai Ahli',
+  },
+  continueAsGuest: {
+    en: 'Continue as Guest',
+    zh: '以游客身份继续',
+    ms: 'Teruskan sebagai Tetamu',
+  },
+  memberBenefits: {
+    en: 'Members earn points and get exclusive discounts!',
+    zh: '会员可赚取积分并享受独家折扣！',
+    ms: 'Ahli mendapat mata dan diskaun eksklusif!',
+  },
+  enterPhoneNumber: {
+    en: 'Enter Your Phone Number',
+    zh: '输入您的电话号码',
+    ms: 'Masukkan Nombor Telefon Anda',
+  },
+  phoneNumber: {
+    en: 'Phone Number',
+    zh: '电话号码',
+    ms: 'Nombor Telefon',
+  },
+  login: {
+    en: 'Login',
+    zh: '登录',
+    ms: 'Log Masuk',
+  },
+  memberNotFound: {
+    en: 'Member not found. Please try again or continue as guest.',
+    zh: '未找到会员。请重试或以游客身份继续。',
+    ms: 'Ahli tidak dijumpai. Sila cuba lagi atau teruskan sebagai tetamu.',
+  },
+  welcomeBack: {
+    en: 'Welcome back',
+    zh: '欢迎回来',
+    ms: 'Selamat kembali',
+  },
+  yourPoints: {
+    en: 'Your Points',
+    zh: '您的积分',
+    ms: 'Mata Anda',
+  },
+  availablePoints: {
+    en: 'Available Points',
+    zh: '可用积分',
+    ms: 'Mata Tersedia',
+  },
+  pointsValue: {
+    en: 'points',
+    zh: '积分',
+    ms: 'mata',
+  },
+  usePoints: {
+    en: 'Use Points',
+    zh: '使用积分',
+    ms: 'Guna Mata',
+  },
+  pointsDiscount: {
+    en: 'Points Discount',
+    zh: '积分折扣',
+    ms: 'Diskaun Mata',
+  },
+  pointsToUse: {
+    en: 'Points to use',
+    zh: '使用积分',
+    ms: 'Mata untuk digunakan',
+  },
+  applyPoints: {
+    en: 'Apply Points',
+    zh: '应用积分',
+    ms: 'Guna Mata',
+  },
+  pointsApplied: {
+    en: 'Points Applied',
+    zh: '积分已应用',
+    ms: 'Mata Digunakan',
+  },
+  earnPoints: {
+    en: 'You will earn',
+    zh: '您将获得',
+    ms: 'Anda akan dapat',
+  },
+  pointsFromOrder: {
+    en: 'points from this order',
+    zh: '积分从此订单',
+    ms: 'mata daripada pesanan ini',
+  },
+
   // Weighing Screen
   weighYourFood: {
     en: 'Weigh Your Food',

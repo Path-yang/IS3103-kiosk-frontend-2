@@ -8,7 +8,7 @@ export const WelcomeScreen: React.FC = () => {
   const { language, setLanguage, setCurrentScreen } = useOrder();
 
   const handleStartOrder = () => {
-    setCurrentScreen('weighing');
+    setCurrentScreen('memberLogin');
   };
 
   const languages: { code: Language; label: string; flag: string }[] = [
