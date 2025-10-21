@@ -196,6 +196,7 @@ export const MemberLoginScreen: React.FC = () => {
                     {language === 'en' && 'Earn points on every purchase'}
                     {language === 'zh' && '每次购买可赚取积分'}
                     {language === 'ms' && 'Dapatkan mata pada setiap pembelian'}
+                    {language === 'ta' && 'ஒவ்வொரு கொள்முதலிலும் புள்ளிகளை சம்பாதிக்கவும்'}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -204,6 +205,7 @@ export const MemberLoginScreen: React.FC = () => {
                     {language === 'en' && 'Use points for discounts'}
                     {language === 'zh' && '使用积分享受折扣'}
                     {language === 'ms' && 'Guna mata untuk diskaun'}
+                    {language === 'ta' && 'தள்ளுபடிக்காக புள்ளிகளை பயன்படுத்துங்கள்'}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -212,6 +214,7 @@ export const MemberLoginScreen: React.FC = () => {
                     {language === 'en' && 'Exclusive member offers'}
                     {language === 'zh' && '专属会员优惠'}
                     {language === 'ms' && 'Tawaran eksklusif ahli'}
+                    {language === 'ta' && 'உறுப்பினர்களுக்கான சிறப்பு சலுகைகள்'}
                   </p>
                 </div>
               </div>
@@ -234,6 +237,7 @@ export const MemberLoginScreen: React.FC = () => {
                 {language === 'en' && 'Quick checkout without registration'}
                 {language === 'zh' && '快速结账，无需注册'}
                 {language === 'ms' && 'Pembayaran pantas tanpa pendaftaran'}
+                {language === 'ta' && 'பதிவு செய்யாமல் விரைவான கட்டணம்'}
               </p>
             </div>
           </button>
@@ -242,4 +246,3 @@ export const MemberLoginScreen: React.FC = () => {
     </div>
   );
 };
-

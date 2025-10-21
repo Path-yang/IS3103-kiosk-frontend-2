@@ -15,6 +15,7 @@ export const WelcomeScreen: React.FC = () => {
     { code: 'en', label: 'English', flag: '🇬🇧' },
     { code: 'zh', label: '中文', flag: '🇨🇳' },
     { code: 'ms', label: 'Bahasa Melayu', flag: '🇲🇾' },
+    { code: 'ta', label: 'தமிழ்', flag: '🇮🇳' },
   ];
 
   return (

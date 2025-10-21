@@ -1,9 +1,10 @@
-export type Language = 'en' | 'zh' | 'ms';
+export type Language = 'en' | 'zh' | 'ms' | 'ta';
 
 export interface Translation {
   en: string;
   zh: string;
   ms: string;
+  ta: string;
 }
 
 export interface SoupBase {
