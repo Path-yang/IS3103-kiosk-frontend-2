@@ -5,8 +5,9 @@ import { translations } from '../data/translations';
 export const PriceSidebar: React.FC = () => {
   const { language, getTotalPrice } = useOrder();
   const subtotal = getTotalPrice();
-  const tax = subtotal * 0.07;
-  const total = subtotal + tax;
+  const serviceCharge = subtotal * 0.10; // 10% service charge
+  const tax = subtotal * 0.09; // 9% tax
+  const total = subtotal + serviceCharge + tax;
 
   return (
     <aside
@@ -19,6 +20,10 @@ export const PriceSidebar: React.FC = () => {
           <div className="flex justify-between">
             <span className="text-gray-600">{translations.subtotal[language]}</span>
             <span className="font-semibold">${subtotal.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600">{translations.serviceCharge[language]}</span>
+            <span className="font-semibold">${serviceCharge.toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-gray-600">{translations.tax[language]}</span>
