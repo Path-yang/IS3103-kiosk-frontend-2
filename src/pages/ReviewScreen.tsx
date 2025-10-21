@@ -13,8 +13,9 @@ export const ReviewScreen: React.FC = () => {
   const pricePerKg = 25.0;
 
   const subtotal = getTotalPrice();
-  const tax = subtotal * 0.07;
-  const total = subtotal + tax;
+  const serviceCharge = subtotal * 0.10; // 10% service charge
+  const tax = subtotal * 0.09; // 9% tax
+  const total = subtotal + serviceCharge + tax;
 
   const handleConfirmAndPay = () => {
     setCurrentScreen('payment');
@@ -160,6 +161,10 @@ export const ReviewScreen: React.FC = () => {
               <div className="flex justify-between text-xl">
                 <span className="text-gray-600">{translations.subtotal[language]}</span>
                 <span className="font-semibold text-gray-800">${subtotal.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between text-xl">
+                <span className="text-gray-600">{translations.serviceCharge[language]}</span>
+                <span className="font-semibold text-gray-800">${serviceCharge.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-xl">
                 <span className="text-gray-600">{translations.tax[language]}</span>

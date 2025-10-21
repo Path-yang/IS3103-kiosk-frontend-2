@@ -372,9 +372,14 @@ export const translations: Record<string, Translation> = {
     ms: 'Jumlah Kecil',
   },
   tax: {
-    en: 'Tax (7%)',
-    zh: '税费 (7%)',
-    ms: 'Cukai (7%)',
+    en: 'Tax (9%)',
+    zh: '税费 (9%)',
+    ms: 'Cukai (9%)',
+  },
+  serviceCharge: {
+    en: 'Service Charge (10%)',
+    zh: '服务费 (10%)',
+    ms: 'Caj Perkhidmatan (10%)',
   },
   total: {
     en: 'Total',

@@ -14,7 +14,9 @@ export const PaymentScreen: React.FC = () => {
   const subtotal = getTotalPrice();
   const pointsDiscount = getPointsDiscount();
   const finalPrice = getFinalPrice();
-  const total = finalPrice * 1.07; // Including tax
+  const serviceCharge = finalPrice * 0.10; // 10% service charge
+  const tax = finalPrice * 0.09; // 9% tax
+  const total = finalPrice + serviceCharge + tax;
   const earnedPoints = Math.floor(finalPrice * 10); // Earn 10 points per dollar spent
 
   const paymentMethods = [
@@ -130,8 +132,12 @@ export const PaymentScreen: React.FC = () => {
                   </div>
                 )}
                 <div className="flex justify-between text-xl">
+                  <span>{translations.serviceCharge[language]}</span>
+                  <span>${serviceCharge.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between text-xl">
                   <span>{translations.tax[language]}</span>
-                  <span>${(finalPrice * 0.07).toFixed(2)}</span>
+                  <span>${tax.toFixed(2)}</span>
                 </div>
               </div>
               <div className="border-t-2 border-white border-opacity-30 pt-4">
