@@ -36,7 +36,7 @@ export const PriceSidebar: React.FC = () => {
         </div>
 
         <div className="mt-auto text-xs text-gray-400">
-          <p>Prices update as you customize</p>
+          <p>Prices update in real-time</p>
         </div>
       </div>
     </aside>
